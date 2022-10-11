@@ -1,7 +1,5 @@
-# psr2022 #
+# Programação de Sistemas Robóticos 2022 #
 
-# Programacao de Sistemas Roboticos 2022 #
-
-# Daniel Sousa Oliveira #
-
-# 89208 #
+Repositório de aulas e trabalhos
+Daniel Sousa Oliveira
+89208
