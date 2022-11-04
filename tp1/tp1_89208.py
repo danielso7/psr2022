@@ -214,7 +214,7 @@ def main():
 
     time_mode = args['use_time_mode']    
     if not args['use_time_mode']:
-        time_mode = True  
+        time_mode = False  
 
     test_stats = {
 
