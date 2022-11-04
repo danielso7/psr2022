@@ -16,6 +16,25 @@ def onTrackbar(value):
     pass
 
 def processImage(capture, ranges, window_name):
+    """Capture images from camera
+    Define maximum and minimum values for R,G,B values
+    Process camera images using the same max and min values
+    Segment image pixels by color
+
+    Parameters
+    ----------
+    capture : cv2.VideoCapture
+        Used to capture images from camera
+    ranges : dict
+        Format to store maximum and minimum RGB values
+    window_name : str
+        Same window name to match cv2.imshow
+
+    Returns
+    -------
+    image_processed: cv2.image
+        Result of the segmentation process
+    """
 
     _, image = capture.read()
 
@@ -39,6 +58,18 @@ def processImage(capture, ranges, window_name):
 
 
 def processSegmentation(capture, ranges, window_name):
+    """Continuously gather images from camera and save parameters
+    from trackbars using 'w' key.
+
+    Parameters
+    ----------
+    capture : cv2.VideoCapture
+        Used to capture images from camera
+    ranges : dict
+        Format to store maximum and minimum RGB values
+    window_name : str
+        Same window name to match cv2.imshow
+    """
 
     while True:
 
@@ -65,6 +96,10 @@ def processSegmentation(capture, ranges, window_name):
 
 
 def main():
+    """Define dictionary format to save data
+    Initialize cv2 windows and trackbars
+    Start segmentation process
+    """
 
     ranges = {'limits': {'B': {'max': 255, 'min': 0},
                          'G': {'max': 255, 'min': 0},
@@ -72,7 +107,7 @@ def main():
 
     capture = cv2.VideoCapture(0)
 
-    window_name = 'Color Segmenter'
+    window_name = 'Color Segmentation'
     cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
     cv2.resizeWindow(window_name, (600,600))
 
