@@ -334,17 +334,18 @@ def changeThickness(char, thickness):
 
     if char == '+' and thickness < 25:
         print(Style.BRIGHT + Fore.WHITE +
-        'Decreasing thickness' + Style.RESET_ALL)
+        'Increasing thickness' + Style.RESET_ALL)
         thickness += 1
 
-    if char == '-' and thickness > 0:
+    elif char == '-' and thickness > 0:
         print(Style.BRIGHT + Fore.WHITE +
-        'Increasing thickness' + Style.RESET_ALL)
+        'Decreasing thickness' + Style.RESET_ALL)
         thickness -= 1
 
-    print(Style.BRIGHT + Fore.RED + 
-    'Limit of thickness reached' 
-    + Style.RESET_ALL)
+    else:
+        print(Style.BRIGHT + Fore.RED + 
+        'Limit of thickness reached' 
+        + Style.RESET_ALL)
 
     return thickness
 
